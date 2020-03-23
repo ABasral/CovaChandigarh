@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Covid-19@Chandigarh</string>
+
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+
+    <string-array name="sectors">
+        <item>Sector 36</item>
+        <item>Sector 35</item>
+        <item>Sector 43</item>
+    </string-array>
+</resources>
