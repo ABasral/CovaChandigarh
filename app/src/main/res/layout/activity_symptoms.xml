@@ -26,18 +26,23 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 >
+
+
+
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@color/black"
-                    android:alpha="0.7"
+                    android:background="@color/colorPrimaryDark"
+                    android:padding="10dp"
                     android:textAlignment="center"
                     android:textColor="@color/white"
-                    android:text="Coronavirus Check List : \nCheck that are applicable"
+                    android:text="Coronavirus Check List : \n\nSelect which are applicable"
                     android:fontFamily="monospace"
                     android:textStyle="bold"
 
                     />
+
 
                 <!--<LinearLayout-->
                     <!--android:layout_width="match_parent"-->
@@ -250,10 +255,10 @@
                         >
                         <TextView
                             android:layout_width="match_parent"
-                            android:layout_height="100dp"
+                            android:layout_height="70dp"
                             android:layout_weight="1"
                             android:text="Difficulty in\nBreathing"
-                            android:background="@drawable/grad3"
+                            android:background="@drawable/grad5"
                             android:onClick="onCheckboxClicked"
                             android:padding="10dp"
                             android:textSize="15dp"
@@ -261,16 +266,17 @@
                             android:fontFamily="monospace"
                             android:textColor="@color/colorPrimaryDark"
                             android:textStyle="bold"
+
                             android:gravity="center_horizontal|center_vertical"
                             android:layout_marginRight="3dp"
                             />
 
                         <TextView
                             android:layout_width="match_parent"
-                            android:layout_height="100dp"
+                            android:layout_height="70dp"
                             android:layout_weight="1"
                             android:text="Severe\nChest Pain"
-                            android:background="@drawable/grad3"
+                            android:background="@drawable/grad5"
                             android:gravity="center_horizontal|center_vertical"
                             android:padding="10dp"
                             android:id="@+id/chestpain"
@@ -291,10 +297,10 @@
                         >
                         <TextView
                             android:layout_width="match_parent"
-                            android:layout_height="100dp"
+                            android:layout_height="70dp"
                             android:layout_weight="1"
-                            android:text="Losing\nConsciousness"
-                            android:background="@drawable/grad3"
+                            android:text="Losing\nConsciousness\n"
+                            android:background="@drawable/grad5"
                             android:padding="10dp"
                             android:textSize="15dp"
                             android:id="@+id/consi"
@@ -302,25 +308,59 @@
                             android:textColor="@color/colorPrimaryDark"
                             android:textStyle="bold"
                             android:onClick="onCheckboxClicked"
-                            android:gravity="center_horizontal|center_vertical"
+                            android:textAlignment="center"
                             android:layout_marginRight="3dp"
                             />
-
                         <TextView
                             android:layout_width="match_parent"
-                            android:layout_height="100dp"
+                            android:layout_height="70dp"
                             android:layout_weight="1"
-                            android:text="High Fever"
-                            android:background="@drawable/grad3"
-                            android:id="@+id/fever"
-                            android:gravity="center_horizontal|center_vertical"
+                            android:text="Fever"
+                            android:background="@drawable/grad5"
                             android:padding="10dp"
-                            android:layout_marginLeft="3dp"
-                            android:onClick="onCheckboxClicked"
+                            android:textSize="15dp"
+                            android:id="@+id/fever"
                             android:fontFamily="monospace"
                             android:textColor="@color/colorPrimaryDark"
                             android:textStyle="bold"
+                            android:textAlignment="center"
+
+                            android:onClick="onCheckboxClicked"
+                            android:gravity="center_horizontal"
+                            android:layout_marginRight="3dp"
                             />
+
+                        <!--<TextView-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="100dp"-->
+                            <!--android:layout_weight="1"-->
+                            <!--android:text="Lossing Conscious "-->
+                            <!--android:background="@drawable/grad3"-->
+                            <!--android:id="@+id/consi"-->
+                            <!--android:gravity="center_horizontal|center_vertical"-->
+                            <!--android:padding="10dp"-->
+                            <!--android:layout_marginLeft="3dp"-->
+                            <!--android:onClick="onCheckboxClicked"-->
+                            <!--android:fontFamily="monospace"-->
+                            <!--android:textColor="@color/colorPrimaryDark"-->
+                            <!--android:textStyle="bold"-->
+                            <!--/>-->
+
+                        <!--<TextView-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="100dp"-->
+                            <!--android:layout_weight="1"-->
+                            <!--android:text="High \nFever"-->
+                            <!--android:background="@drawable/grad3"-->
+                            <!--android:id="@+id/fever"-->
+                            <!--android:gravity="center_horizontal|center_vertical"-->
+                            <!--android:padding="20dp"-->
+                            <!--android:layout_marginLeft="3dp"-->
+                            <!--android:onClick="onCheckboxClicked"-->
+                            <!--android:fontFamily="monospace"-->
+                            <!--android:textColor="@color/colorPrimaryDark"-->
+                            <!--android:textStyle="bold"-->
+                            <!--/>-->
 
                     </LinearLayout>
                     <LinearLayout
@@ -332,10 +372,10 @@
                         >
                         <TextView
                             android:layout_width="match_parent"
-                            android:layout_height="100dp"
+                            android:layout_height="70dp"
                             android:layout_weight="1"
                             android:text="Dry Cough"
-                            android:background="@drawable/grad3"
+                            android:background="@drawable/grad5"
                             android:padding="10dp"
                             android:textSize="15dp"
                             android:id="@+id/cough"
@@ -349,10 +389,10 @@
 
                         <TextView
                             android:layout_width="match_parent"
-                            android:layout_height="100dp"
+                            android:layout_height="70dp"
                             android:layout_weight="1"
                             android:text="Sneezing"
-                            android:background="@drawable/grad3"
+                            android:background="@drawable/grad5"
                             android:id="@+id/sneez"
                             android:gravity="center_horizontal|center_vertical"
                             android:padding="10dp"
@@ -371,15 +411,45 @@
                         android:layout_weight="2"
                         android:layout_marginTop="6dp"
                         >
+
+                        <TextView
+                            android:id="@+id/travel"
+                            android:layout_width="match_parent"
+                            android:layout_height="80dp"
+                            android:layout_marginRight="3dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/grad5"
+                            android:fontFamily="monospace"
+                            android:gravity="center_horizontal|center_vertical"
+                            android:onClick="onCheckboxClicked"
+                            android:padding="10dp"
+                            android:text="Travel History to Covid-19 affected Country in last 14 days"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="15dp"
+                            android:textStyle="bold" />
+
+
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_weight="2"
+                        android:layout_marginTop="6dp"
+                        >
+
                         <TextView
                             android:layout_width="match_parent"
-                            android:layout_height="100dp"
+                            android:layout_height="80dp"
                             android:layout_weight="1"
-                            android:text="Travel History to\nCovid affected Location"
-                            android:id="@+id/travel"
-                            android:background="@drawable/grad3"
+                            android:text="Contact with any person who has recent travel history to Covid-19 affected Country"
+                            android:id="@+id/contactPerson"
+                            android:background="@drawable/grad5"
                             android:padding="10dp"
-                            android:textSize="15dp"
+                            android:textSize="14.5dp"
                             android:fontFamily="monospace"
                             android:textColor="@color/colorPrimaryDark"
                             android:textStyle="bold"
@@ -387,10 +457,8 @@
                             android:gravity="center_horizontal|center_vertical"
                             android:layout_marginRight="3dp"
                             />
-
-
-
                     </LinearLayout>
+
 
                     <Button
                         android:layout_width="100dp"

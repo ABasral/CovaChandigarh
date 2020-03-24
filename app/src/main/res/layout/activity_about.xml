@@ -29,7 +29,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
+                android:layout_height="80dp"
                 android:orientation="horizontal"
                 android:layout_weight="2"
                 android:id="@+id/logoss"
@@ -52,34 +52,68 @@
                     />
             </LinearLayout>
 
-        <TextView
+        <com.uncopt.android.widget.text.justify.JustifiedTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp"
+            android:padding="20dp"
             android:layout_marginTop="20dp"
             android:justificationMode="inter_word"
             android:textSize="20dp"
-            android:textStyle="italic|bold"
-            android:text="Chandigarh Administration (UT), Chandigarh is taking all precautions and essential steps to ensure the safety of people. UT Administration is prepared with necessary measures to face the challenge and threat caused by the growing pandemic of COVID-19 (Corona Virus). The extremely important factor in preventing the spread of the Corona Virus is to encourage the citizens with the right information and taking precautions as per the advisories and information being issued by  Health department,  Chandigarh Administration (UT) as well as Ministry of Health and Family Welfare, GOI."
+            android:textStyle="italic"
+            android:text="Chandigarh Administration (UT), Chandigarh is taking all precautions and essential steps to ensure the safety of people. UT Administration is prepared with necessary measures to face the challenge and threat caused by the growing pandemic of COVID-19 (CoronaVirus). The extremely important factor in preventing the spread of the Corona Virus is to encourage the citizens with the right information and taking precautions as per the advisories and information being issued by  Health department,  Chandigarh Administration (UT) as well as Ministry of Health &amp; Family Welfare, GOI."
             android:textColor="@color/colorPrimaryDark"
-            android:layout_gravity="start|center|end"
-            android:gravity="start|end|center"
+
             />
-        <TextView
+        <com.uncopt.android.widget.text.justify.JustifiedTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:textStyle="bold|italic"
+            android:padding="20dp"
+            android:textStyle="italic"
             android:textSize="20dp"
             android:justificationMode="inter_word"
-            android:text="With this approach, The Department of Technical Education, has taken responsibility to design this Mobile App, which help to provide real time information regarding precaution and prevention from spread of Corona Virus in Chandigarh. This Mobile platform is developed by department of CSE, CCET (Degree Wing) Chandigarh under the guidance of Sh. Sachin Rana IAS, Special Secretary Technical Education, Dr. Manpreet Singh, Principal CCET, Dr Sunil K Singh Professor and Head CSE with team of students Mr. Keshav Tangri CSE and Mr. Ayush Basral
+            android:text="With this approach, The Department of Technical Education, Chandigarh (UT) Administration, has taken responsibility to design this Mobile App in association with CSE Department, CCET (Degree Wing) Chandigarh that would help to provide real time information about precaution and prevention of spread of CoronaVirus in Chandigarh.
 
-\n\n\nFor improving this mobile App and its services, do share your kind suggestions and feedback with us."
+For improving this mobile App and its services, do share your kind suggestions and feedback with us"
             android:textColor="@color/colorPrimaryDark"
-            android:layout_gravity="start|center|end"
-            android:gravity="start|end|center"
+
             />
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+
+            >
+            <com.uncopt.android.widget.text.justify.JustifiedTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Disclaimer"
+                android:background="@color/colorPrimaryDark"
+                android:padding="5dp"
+                android:textColor="@color/white"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/white"/>
+
+            <com.uncopt.android.widget.text.justify.JustifiedTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimaryDark"
+                android:textSize="20dp"
+                android:textColor="@color/white"
+                android:padding="10dp"
+
+                android:textStyle="bold|italic"
+                android:text="All the information and link contained in the App is provided for information purpose only. The information contained herein SHOULD NOT be used as medical advice, diagnosis or treatment.  If you any concerns or questions about your health, you should always consult with an registered physician or visit nearby hospitals."
+                />
+
+        </LinearLayout>
 
     </LinearLayout>
 

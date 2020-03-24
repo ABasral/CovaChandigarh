@@ -12,6 +12,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
@@ -23,6 +24,7 @@ import java.util.Locale;
 public class fluclinics extends AppCompatActivity {
     private RecyclerView recyclerView;
     private DatabaseReference myref;
+    ProgressBar progressBar;
     Button backbut;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +40,9 @@ public class fluclinics extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        progressBar = (ProgressBar) findViewById(R.id.progress);
+        progressBar.setVisibility(View.VISIBLE);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         myref = FirebaseDatabase.getInstance().getReference().child("/fluclinics");
@@ -48,7 +53,7 @@ public class fluclinics extends AppCompatActivity {
                 myref
         ) {
             @Override
-            protected void populateViewHolder(hospitals.BlogViewHolder viewHolder, hospital_modal model, int position) {
+            protected void populateViewHolder(hospitals.BlogViewHolder viewHolder,final hospital_modal model, int position) {
                 viewHolder.setname(model.getname());
                 viewHolder.setaddress(model.getaddress());
                 final String num = model.getcontact_num();
@@ -67,7 +72,7 @@ public class fluclinics extends AppCompatActivity {
                 viewHolder.locate.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        String uri = String.format(Locale.ENGLISH, "geo:%f,%f", lat, longi);
+                        String uri = String.format(Locale.ENGLISH, "geo:%f,%f"+"?q=<%f>,<%f>", lat, longi,lat, longi);
                         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
                         startActivity(intent);
                     }
@@ -75,6 +80,7 @@ public class fluclinics extends AppCompatActivity {
             }
         };
         recyclerView.setAdapter(recyclerAdapter);
+        progressBar.setVisibility(View.GONE);
     }
     public static class BlogViewHolder extends RecyclerView.ViewHolder {
         View mView;

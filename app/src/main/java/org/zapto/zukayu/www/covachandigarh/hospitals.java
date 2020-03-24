@@ -12,6 +12,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
@@ -25,6 +26,7 @@ public class hospitals extends AppCompatActivity {
     private RecyclerView recyclerView;
     private DatabaseReference myref;
     Button backbut;
+    ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +41,9 @@ public class hospitals extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        progressBar = (ProgressBar) findViewById(R.id.progress);
+        progressBar.setVisibility(View.VISIBLE);
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -50,7 +55,7 @@ public class hospitals extends AppCompatActivity {
                 myref
         ) {
             @Override
-            protected void populateViewHolder(BlogViewHolder viewHolder, hospital_modal model, int position) {
+            protected void populateViewHolder(BlogViewHolder viewHolder, final hospital_modal model, int position) {
                 viewHolder.setname(model.getname());
                 viewHolder.setaddress(model.getaddress());
                 final String num = model.getcontact_num();
@@ -69,15 +74,19 @@ public class hospitals extends AppCompatActivity {
                 viewHolder.locate.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        String uri = String.format(Locale.ENGLISH, "geo:%f,%f", lat, longi);
+                        String uri = String.format(Locale.ENGLISH, "geo:%f,%f"+"?q=<%f>,<%f>", lat, longi,lat, longi);
                         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
                         startActivity(intent);
                     }
                 });
             }
         };
+
         recyclerView.setAdapter(recyclerAdapter);
+        progressBar.setVisibility(View.GONE);
     }
+
+
     public static class BlogViewHolder extends RecyclerView.ViewHolder {
         View mView;
         TextView t_name;

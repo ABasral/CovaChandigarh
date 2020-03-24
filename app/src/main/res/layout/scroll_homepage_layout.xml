@@ -36,7 +36,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="33"
+                        android:text="-"
                         android:id="@+id/suspect_num"
                         android:fontFamily="serif"
                         android:textSize="40dp"
@@ -62,7 +62,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="2"
+                        android:text="-"
                         android:id="@+id/confirmed_num"
                         android:fontFamily="serif"
                         android:textSize="40dp"
@@ -102,7 +102,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="0"
+                        android:text="-"
                         android:id="@+id/recovered_num"
                         android:fontFamily="serif"
                         android:textSize="20dp"
@@ -132,7 +132,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="1"
+                        android:text="-"
                         android:id="@+id/death_num"
                         android:textColor="@color/colorPrimaryDark"
                         android:fontFamily="serif"
@@ -156,7 +156,7 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:src="@drawable/banner"
+            android:src="@drawable/bannerabout"
             android:id="@+id/banner"
             />
         <TextView
@@ -165,11 +165,12 @@
             android:textColor="@color/white"
             android:background="@color/colorPrimary"
             android:padding="5dp"
-            android:layout_marginTop="-28dp"
+            android:layout_marginTop="-2dp"
             android:textAlignment="center"
             android:fontFamily="serif"
             android:textStyle="bold"
             android:textSize="20dp"
+
             android:textIsSelectable="true"
             android:text="Help Line Numbers"
             />
@@ -200,11 +201,12 @@
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="60dp"
                     android:textStyle="bold"
                     android:textColor="@color/white"
                     android:text="Toll Free Number : 112"
                     android:id="@+id/chd"
+                    android:gravity="center_vertical|center_horizontal"
                     android:background="@color/colorPrimary"
                     android:layout_margin="1dp"
                     android:clickable="true"
@@ -214,12 +216,13 @@
                     />
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="60dp"
                     android:textStyle="bold"
                     android:textColor="@color/white"
                     android:background="@color/colorPrimary"
                     android:layout_margin="1dp"
                     android:clickable="true"
+                    android:gravity="center_vertical|center_horizontal"
                     android:text="Helpline : 97795 58282"
                     android:textSize="15dp"
                     android:id="@+id/chdhelp"
@@ -252,13 +255,14 @@
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="60dp"
                     android:textStyle="bold"
                     android:textColor="@color/white"
                     android:text="Toll Free Number : 1075"
                     android:id="@+id/india"
                     android:clickable="true"
                     android:background="@color/colorPrimary"
+                    android:gravity="center_vertical|center_horizontal"
                     android:textSize="15dp"
                     android:layout_margin="1dp"
                     android:elevation="10dp"
@@ -266,10 +270,11 @@
                     />
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="60dp"
                     android:textStyle="bold"
                     android:textColor="@color/white"
-                    android:text="Helpline : 11239 78046"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:text="Helpline : 011239 78046"
                     android:textSize="15dp"
                     android:clickable="true"
                     android:background="@color/colorPrimary"
@@ -318,7 +323,7 @@
             android:background="@drawable/button_capsule"
             android:id="@+id/symptomscheck"
             android:textStyle="bold"
-            android:text="Check out for corona symptoms"
+            android:text="Self Assessment for Covid-19"
 
             />
 
@@ -377,7 +382,7 @@
                 android:layout_height="wrap_content"
                 android:drawableLeft="@drawable/ic_adjust"
                 android:gravity="center_vertical|start"
-                android:text="Quarentine"
+                android:text="Quarantine"
                 android:textStyle="bold"
 
                 android:textSize="15dp"
@@ -452,7 +457,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:id="@+id/indconf"
-                    android:text="329\nConfirmed"
+                    android:text="-"
                     android:textStyle="bold"
                     android:textColor="@color/colorPrimaryDark"
                     android:textAlignment="center"
@@ -463,7 +468,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:id="@+id/inddeath"
-                    android:text="5\nDeaths"
+                    android:text="-"
                     android:textColor="@color/colorPrimaryDark"
                     android:textStyle="bold"
                     android:textAlignment="center"
@@ -518,7 +523,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:id="@+id/worldconf"
-                    android:text="300,227\nConfirmed"
+                    android:text="-"
                     android:textStyle="bold"
                     android:textColor="@color/colorPrimaryDark"
                     android:textAlignment="center"
@@ -529,7 +534,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:id="@+id/worlddeath"
-                    android:text="12,948\nDeaths"
+                    android:text="-"
                     android:textStyle="bold"
                     android:textColor="@color/colorPrimaryDark"
                     android:textAlignment="center"
@@ -545,6 +550,18 @@
 
         </LinearLayout>
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:justificationMode="inter_word"
+            android:layout_marginBottom="0dp"
+            android:padding="3dp"
+            android:background="@color/colorPrimaryDark"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:text="Technical Education Department, UT Chandigarh"
+            />
     </LinearLayout>
 
 </ScrollView>

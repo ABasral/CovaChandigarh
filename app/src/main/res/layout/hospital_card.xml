@@ -13,6 +13,9 @@
         android:layout_height="match_parent"
         android:background="@drawable/mapback"
        >
+
+
+
         <LinearLayout
             android:layout_width="match_parent"
             android:orientation="vertical"
@@ -54,29 +57,35 @@
             android:id="@+id/address"/>
     <LinearLayout
         android:layout_width="match_parent"
-        android:orientation="vertical"
+        android:orientation="horizontal"
+        android:layout_weight="2"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="70dp">
+        android:gravity="center_horizontal"
+        android:layout_gravity="center"
+
+        >
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/contactbut"
+            android:textAlignment="center"
+            android:layout_weight="1"
+            android:textColor="@color/white"
+            android:drawableLeft="@drawable/ic_phone_in_talk_recyc"
             android:background="@color/colorPrimary"
             android:text="Contact"/>
-    </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:orientation="vertical"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="-49dp"
-            android:layout_marginLeft="170dp">
-           <Button
+        <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/locate"
+            android:layout_weight="1"
+            android:textAlignment="center"
+            android:drawableLeft="@drawable/ic_location_searching"
+            android:textColor="@color/white"
             android:background="@color/colorPrimaryDark"
             android:text="Locate"/>
-        </LinearLayout>
+    </LinearLayout>
+
     </LinearLayout>
     </LinearLayout>
 </android.support.v7.widget.CardView>

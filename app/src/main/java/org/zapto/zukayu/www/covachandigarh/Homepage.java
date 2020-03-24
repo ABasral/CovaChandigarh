@@ -1,6 +1,7 @@
 package org.zapto.zukayu.www.covachandigarh;
 
 import android.Manifest;
+import android.app.ActionBar;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
@@ -16,13 +17,20 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Html;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.style.TypefaceSpan;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -50,7 +58,7 @@ public class Homepage extends AppCompatActivity implements OnMapReadyCallback {
     ActionBarDrawerToggle toggle;
     NavigationView navigationView;
     private TextView suspectst,confirmedt,recoveredt,deathst,ideath,iconf,wconf,wdeath;
-    private LinearLayout call,aware,travel,hospital,faq,share,massgather,about,notices,feedback,videos,extnotice,conf,fluclinic,quarantine;
+    private LinearLayout call,aware,travel,hospital,faq,share,massgather,about,notices,feedback,adm_msg,extnotice,conf,fluclinic,quarantine;
     private Button coronaWeb,symptoms;
     private TextView chd,chdhelp,india,indiahelp;
 
@@ -68,6 +76,13 @@ public class Homepage extends AppCompatActivity implements OnMapReadyCallback {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homepage);
 
+//         actionBar = getActionBar();
+//        TextView tv = new TextView(getApplicationContext());
+//        RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT);
+//        tv.setLayoutParams(lp);
+//        tv.setText(actionBar.getTitle());
+//        tv.setTextSize(TypedValue.COMPLEX_UNIT_DIP,10);
+
         drawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
         toggle = new ActionBarDrawerToggle(Homepage.this,drawerLayout,R.string.open,R.string.close);
         drawerLayout.addDrawerListener(toggle);
@@ -77,6 +92,7 @@ public class Homepage extends AppCompatActivity implements OnMapReadyCallback {
         getSupportActionBar().setDisplayShowCustomEnabled(true);
 
         navigationView = (NavigationView) findViewById(R.id.nav_menu);
+
 
 
 
@@ -95,17 +111,18 @@ public class Homepage extends AppCompatActivity implements OnMapReadyCallback {
         travel = (LinearLayout) findViewById(R.id.travel);
         hospital = (LinearLayout) findViewById(R.id.hospital);
         faq = (LinearLayout) findViewById(R.id.faq);
-        massgather = (LinearLayout) findViewById(R.id.massgather);
+//        massgather = (LinearLayout) findViewById(R.id.massgather);
         about = (LinearLayout) findViewById(R.id.about);
         notices = (LinearLayout) findViewById(R.id.notices);
         share = (LinearLayout) findViewById(R.id.share);
         feedback = (LinearLayout) findViewById(R.id.feedback);
         extnotice = (LinearLayout) findViewById(R.id.externalnotices);
-        videos = (LinearLayout) findViewById(R.id.videos);
+//        videos = (LinearLayout) findViewById(R.id.videos);
         conf = (LinearLayout) findViewById(R.id.confirmed);
         symptoms = (Button) findViewById(R.id.symptomscheck);
         fluclinic = (LinearLayout) findViewById(R.id.fluclinics);
         quarantine = (LinearLayout) findViewById(R.id.quarentine);
+        adm_msg = (LinearLayout) findViewById(R.id.adm_desk);
 
 
 
@@ -220,7 +237,7 @@ public class Homepage extends AppCompatActivity implements OnMapReadyCallback {
                 new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
-                        iconf.setText(Integer.toString(dataSnapshot.getValue(Integer.class))+"\nConfrmed");
+                        iconf.setText(Integer.toString(dataSnapshot.getValue(Integer.class))+"\nConfirmed");
                     }
 
                     @Override
@@ -248,7 +265,7 @@ public class Homepage extends AppCompatActivity implements OnMapReadyCallback {
                 new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
-                        wconf.setText(Integer.toString(dataSnapshot.getValue(Integer.class))+"\nConfrmed");
+                        wconf.setText(Integer.toString(dataSnapshot.getValue(Integer.class))+"\nConfirmed");
                     }
 
                     @Override
@@ -308,10 +325,8 @@ public class Homepage extends AppCompatActivity implements OnMapReadyCallback {
 
         switch (item.getItemId()){
             case R.id.alert:
-                Toast.makeText(Homepage.this,"Redirecting...",Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(Homepage.this,websiteView.class);
-                intent.putExtra("url","http://chandigarh.gov.in/health_covid19.htm");
-                startActivity(intent);
+                startActivity(new Intent(Homepage.this,UTNotices.class));
+                Toast.makeText(Homepage.this,"Fetching Notices...",Toast.LENGTH_SHORT).show();
 
         }
 
@@ -384,14 +399,14 @@ public class Homepage extends AppCompatActivity implements OnMapReadyCallback {
             }
         });
 
-        massgather.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Homepage.this, report_gather.class);
-                startActivity(intent);
-
-            }
-        });
+//        massgather.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = new Intent(Homepage.this, report_gather.class);
+//                startActivity(intent);
+//
+//            }
+//        });
 
         about.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -445,12 +460,12 @@ public class Homepage extends AppCompatActivity implements OnMapReadyCallback {
             }
         });
 
-        videos.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(Homepage.this,"No Data Provided !",Toast.LENGTH_SHORT).show();
-            }
-        });
+//        videos.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Toast.makeText(Homepage.this,"No Data Provided !",Toast.LENGTH_SHORT).show();
+//            }
+//        });
 
         extnotice.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -466,9 +481,12 @@ public class Homepage extends AppCompatActivity implements OnMapReadyCallback {
         conf.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(Homepage.this,websiteView.class);
-                i.putExtra("url","https://docs.google.com/viewerng/viewer?url="+pdflink);
-                startActivity(i);
+//                Intent i = new Intent(Homepage.this,websiteView.class);
+//                i.putExtra("url","https://docs.google.com/viewerng/viewer?url="+pdflink);
+//                startActivity(i);
+
+                Intent Getintent = new Intent(Intent.ACTION_VIEW,Uri.parse("http://chandigarh.gov.in/pdf/mc20-listqrnt.pdf"));
+                startActivity(Getintent);
             }
         });
 
@@ -479,12 +497,18 @@ public class Homepage extends AppCompatActivity implements OnMapReadyCallback {
             }
         });
 
-    }
+        adm_msg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Homepage.this,adminDesk.class));
+            }
+        });
 
+    }
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
-        Toast.makeText(Homepage.this,"Ready To Map !",Toast.LENGTH_LONG).show();
+
         gMap = googleMap;
         getNodesLocationAndMap();
 

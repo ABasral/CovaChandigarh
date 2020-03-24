@@ -33,7 +33,7 @@
             android:textColor="@color/black"
             android:text="Chandigarh Administration"
             android:textAlignment="center"
-            android:textSize="20dp"
+            android:textSize="30dp"
             />
 
         <LinearLayout
@@ -55,7 +55,7 @@
                 android:layout_gravity="center_horizontal"
                 android:textStyle="bold"
                 android:textAlignment="center"
-                android:textSize="60dp"
+                android:textSize="40dp"
                 android:textColor="@color/purple"
                 />
             <TextView
@@ -63,7 +63,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/logo"
                 android:layout_centerHorizontal="true"
-                android:text="Be Careful and ensure Social Distancing "
+                android:text="Be Careful &amp; Ensure Social Distancing "
                 android:padding="10dp"
                 android:layout_gravity="center_horizontal"
                 android:textStyle="italic|bold"
@@ -77,5 +77,16 @@
 
         </LinearLayout>
     </LinearLayout>
-
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:justificationMode="inter_word"
+        android:layout_alignParentBottom="true"
+        android:padding="3dp"
+        android:background="@color/colorPrimaryDark"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:text="Technical Education Department, UT Chandigarh"
+        />
 </RelativeLayout>

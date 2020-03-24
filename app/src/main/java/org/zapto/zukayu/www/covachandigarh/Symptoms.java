@@ -26,6 +26,8 @@ public class Symptoms extends AppCompatActivity {
 
     private Boolean cough = false;
 
+    private Boolean contact = false;
+
     private Button submit;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +39,21 @@ public class Symptoms extends AppCompatActivity {
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(travel){
+
+
+
+
+                if(cough && fever && sneez){
+                    Toast.makeText(Symptoms.this,"Immediately Visit a Flu Clinic !",Toast.LENGTH_SHORT).show();
+                    activitychange();
+                }
+
+                if(fever && cough && breathing){
+                    Toast.makeText(Symptoms.this,"Immediately Visit a Flu Clinic !",Toast.LENGTH_SHORT).show();
+                    activitychange();
+                }
+
+                if(travel || contact){
                     Toast.makeText(Symptoms.this,"Immediately Visit a Flu Clinic !",Toast.LENGTH_SHORT).show();
                     activitychange();
                 }else{
@@ -78,7 +94,6 @@ public class Symptoms extends AppCompatActivity {
     }
 
     public void activitychange(){
-        //start intent here to open flu clinics
         startActivity(new Intent(Symptoms.this,fluclinics.class));
     }
 
@@ -89,7 +104,7 @@ public class Symptoms extends AppCompatActivity {
                 if(breathing){
                     breathing = false;
                     TextView textView = (TextView) findViewById(R.id.breathing);
-                    textView.setBackgroundResource(R.drawable.grad3);
+                    textView.setBackgroundResource(R.drawable.grad5);
                 }else{
                     breathing = true;
                     TextView textView = (TextView) findViewById(R.id.breathing);
@@ -100,7 +115,7 @@ public class Symptoms extends AppCompatActivity {
                 if(chest){
                     chest = false;
                     TextView textView = (TextView) findViewById(R.id.chestpain);
-                    textView.setBackgroundResource(R.drawable.grad3);
+                    textView.setBackgroundResource(R.drawable.grad5);
                 }else{
                     chest = true;
                     TextView textView = (TextView) findViewById(R.id.chestpain);
@@ -112,7 +127,7 @@ public class Symptoms extends AppCompatActivity {
                 if(consi){
                     consi = false;
                     TextView textView = (TextView) findViewById(R.id.consi);
-                    textView.setBackgroundResource(R.drawable.grad3);
+                    textView.setBackgroundResource(R.drawable.grad5);
                 }else{
                     consi = true;
                     TextView textView = (TextView) findViewById(R.id.consi);
@@ -123,7 +138,7 @@ public class Symptoms extends AppCompatActivity {
                 if(fever){
                     fever = false;
                     TextView textView = (TextView) findViewById(R.id.fever);
-                    textView.setBackgroundResource(R.drawable.grad3);
+                    textView.setBackgroundResource(R.drawable.grad5);
                 }else{
                     fever = true;
                     TextView textView = (TextView) findViewById(R.id.fever);
@@ -134,7 +149,7 @@ public class Symptoms extends AppCompatActivity {
                 if(cough){
                     cough = false;
                     TextView textView = (TextView) findViewById(R.id.cough);
-                    textView.setBackgroundResource(R.drawable.grad3);
+                    textView.setBackgroundResource(R.drawable.grad5);
                 }else{
                     cough = true;
                     TextView textView = (TextView) findViewById(R.id.cough);
@@ -145,7 +160,7 @@ public class Symptoms extends AppCompatActivity {
                 if(travel){
                     travel = false;
                     TextView textView = (TextView) findViewById(R.id.travel);
-                    textView.setBackgroundResource(R.drawable.grad3);
+                    textView.setBackgroundResource(R.drawable.grad5);
                 }else{
                     travel = true;
                     TextView textView = (TextView) findViewById(R.id.travel);
@@ -156,10 +171,21 @@ public class Symptoms extends AppCompatActivity {
                 if(sneez){
                     sneez = false;
                     TextView textView = (TextView) findViewById(R.id.sneez);
-                    textView.setBackgroundResource(R.drawable.grad3);
+                    textView.setBackgroundResource(R.drawable.grad5);
                 }else{
                     sneez = true;
                     TextView textView = (TextView) findViewById(R.id.sneez);
+                    textView.setBackgroundResource(R.drawable.grad4);
+                }
+                break;
+            case R.id.contactPerson:
+                if(contact){
+                    contact = false;
+                    TextView textView = (TextView) findViewById(R.id.contactPerson);
+                    textView.setBackgroundResource(R.drawable.grad5);
+                }else{
+                    contact = true;
+                    TextView textView = (TextView) findViewById(R.id.contactPerson);
                     textView.setBackgroundResource(R.drawable.grad4);
                 }
 

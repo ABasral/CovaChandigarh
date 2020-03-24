@@ -29,7 +29,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="160dp"
+                android:layout_height="180dp"
                 android:orientation="vertical"
                 android:background="@color/white"
                 android:id="@+id/header"
@@ -46,7 +46,7 @@
                     android:layout_width="match_parent"
                     android:textSize="15dp"
                     android:layout_height="wrap_content"
-                    android:text="CORONAVIRUS ALERT"
+                    android:text="COVID-19 ALERT"
                     android:textStyle="bold"
                     android:padding="5dp"
                     android:fontFamily="serif"
@@ -62,7 +62,7 @@
                     android:textStyle="bold"
                     android:fontFamily="serif"
                     android:layout_height="wrap_content"
-                    android:text="Chandigarh Administration"
+                    android:text="Technical Education Department, UT\nChandigarh Administration"
                     />
 
                 <View
@@ -122,38 +122,38 @@
                                 />
 
                         </LinearLayout>
-                        <LinearLayout
+                        <!--<LinearLayout-->
 
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:orientation="horizontal"
-                            android:id="@+id/videos"
-                            android:weightSum="3"
-                            >
-                            <Button
-                                android:layout_weight="0"
-                                android:layout_gravity="center"
-                                android:layout_width="30dp"
-                                android:layout_height="30dp"
-                                android:layout_margin="10dp"
-                                android:backgroundTint="@color/colorPrimaryDark"
-                                android:background="@drawable/ic_video_library"
-                                />
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="match_parent"-->
+                            <!--android:orientation="horizontal"-->
+                            <!--android:id="@+id/videos"-->
+                            <!--android:weightSum="3"-->
+                            <!--&gt;-->
+                            <!--<Button-->
+                                <!--android:layout_weight="0"-->
+                                <!--android:layout_gravity="center"-->
+                                <!--android:layout_width="30dp"-->
+                                <!--android:layout_height="30dp"-->
+                                <!--android:layout_margin="10dp"-->
+                                <!--android:backgroundTint="@color/colorPrimaryDark"-->
+                                <!--android:background="@drawable/ic_video_library"-->
+                                <!--/>-->
 
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="40dp"
-                                android:layout_weight="3"
-                                android:fontFamily="serif"
-                                android:textColor="@color/colorPrimary"
-                                android:textStyle="bold"
-                                android:textSize="15dp"
-                                android:padding="10dp"
-                                android:layout_gravity="center"
-                                android:text="General videos "
-                                />
+                            <!--<TextView-->
+                                <!--android:layout_width="match_parent"-->
+                                <!--android:layout_height="40dp"-->
+                                <!--android:layout_weight="3"-->
+                                <!--android:fontFamily="serif"-->
+                                <!--android:textColor="@color/colorPrimary"-->
+                                <!--android:textStyle="bold"-->
+                                <!--android:textSize="15dp"-->
+                                <!--android:padding="10dp"-->
+                                <!--android:layout_gravity="center"-->
+                                <!--android:text="General videos "-->
+                                <!--/>-->
 
-                        </LinearLayout>
+                        <!--</LinearLayout>-->
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -213,7 +213,7 @@
                                 android:textSize="15dp"
                                 android:padding="10dp"
                                 android:layout_gravity="center"
-                                android:text="UT Notices "
+                                android:text="UT Administration Notices "
                                 />
 
                         </LinearLayout>
@@ -244,7 +244,7 @@
                                 android:textSize="15dp"
                                 android:padding="10dp"
                                 android:layout_gravity="center"
-                                android:text="Central Notices "
+                                android:text="GOI Notices "
                                 />
 
                         </LinearLayout>
@@ -306,7 +306,7 @@
                                 android:textSize="15dp"
                                 android:padding="10dp"
                                 android:layout_gravity="center"
-                                android:text="Quarentine Facility "
+                                android:text="Quarantine Facility "
                                 />
 
                         </LinearLayout>
@@ -369,7 +369,7 @@
                                 android:textSize="15dp"
                                 android:padding="10dp"
                                 android:layout_gravity="center"
-                                android:text="Confirmed Cases "
+                                android:text="Home Quarantined Cases "
                                 />
 
                         </LinearLayout>
@@ -405,37 +405,37 @@
                                 />
 
                         </LinearLayout>
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:orientation="horizontal"
-                            android:weightSum="3"
-                            android:id="@+id/massgather"
-                            >
-                            <Button
-                                android:layout_weight="0"
-                                android:layout_gravity="center"
-                                android:layout_width="30dp"
-                                android:layout_height="30dp"
-                                android:backgroundTint="@color/colorPrimaryDark"
-                                android:layout_margin="10dp"
-                                android:background="@drawable/ic_people"
-                                />
+                        <!--<LinearLayout-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="match_parent"-->
+                            <!--android:orientation="horizontal"-->
+                            <!--android:weightSum="3"-->
+                            <!--android:id="@+id/massgather"-->
+                            <!--&gt;-->
+                            <!--<Button-->
+                                <!--android:layout_weight="0"-->
+                                <!--android:layout_gravity="center"-->
+                                <!--android:layout_width="30dp"-->
+                                <!--android:layout_height="30dp"-->
+                                <!--android:backgroundTint="@color/colorPrimaryDark"-->
+                                <!--android:layout_margin="10dp"-->
+                                <!--android:background="@drawable/ic_people"-->
+                                <!--/>-->
 
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="40dp"
-                                android:layout_weight="3"
-                                android:fontFamily="serif"
-                                android:textColor="@color/colorPrimary"
-                                android:textStyle="bold"
-                                android:textSize="15dp"
-                                android:padding="10dp"
-                                android:layout_gravity="center"
-                                android:text="Report Mass Gathering "
-                                />
+                            <!--<TextView-->
+                                <!--android:layout_width="match_parent"-->
+                                <!--android:layout_height="40dp"-->
+                                <!--android:layout_weight="3"-->
+                                <!--android:fontFamily="serif"-->
+                                <!--android:textColor="@color/colorPrimary"-->
+                                <!--android:textStyle="bold"-->
+                                <!--android:textSize="15dp"-->
+                                <!--android:padding="10dp"-->
+                                <!--android:layout_gravity="center"-->
+                                <!--android:text="Report Mass Gathering "-->
+                                <!--/>-->
 
-                        </LinearLayout>
+                        <!--</LinearLayout>-->
                         <!--<LinearLayout-->
                         <!--android:layout_width="match_parent"-->
                         <!--android:layout_height="match_parent"-->
@@ -529,6 +529,38 @@
                                 />
 
                         </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            android:weightSum="3"
+                            android:id="@+id/adm_desk"
+                            >
+                            <Button
+                                android:layout_weight="0"
+                                android:layout_gravity="center"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_margin="10dp"
+                                android:backgroundTint="@color/colorPrimaryDark"
+                                android:background="@drawable/ic_message"
+                                />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:layout_weight="3"
+                                android:fontFamily="serif"
+                                android:textColor="@color/colorPrimary"
+                                android:textStyle="bold"
+                                android:textSize="15dp"
+                                android:padding="10dp"
+                                android:layout_gravity="center"
+                                android:text="UT Administrator Message"
+                                />
+
+                        </LinearLayout>
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
@@ -560,6 +592,8 @@
                                 />
 
                         </LinearLayout>
+
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"

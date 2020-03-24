@@ -16,7 +16,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".UTNotices"></activity>
+        <activity android:name=".UTNotices" />
         <activity android:name=".report_gather" />
 
         <meta-data
@@ -48,6 +48,7 @@
         <activity android:name=".hospital_modal" />
         <activity android:name=".hospitals" />
         <activity android:name=".quarantine" />
+        <activity android:name=".adminDesk"></activity>
     </application>
 
 </manifest>
