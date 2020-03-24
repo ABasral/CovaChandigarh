@@ -5,6 +5,7 @@ import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.location.Location;
 import android.net.Uri;
 import android.support.annotation.NonNull;
@@ -44,13 +45,14 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class Homepage extends AppCompatActivity implements OnMapReadyCallback {
+    String pdflink;
     DrawerLayout drawerLayout;
     ActionBarDrawerToggle toggle;
     NavigationView navigationView;
-    private TextView coronaWeb,suspectst,confirmedt,recoveredt,deathst,ideath,iconf,wconf,wdeath;
+    private TextView suspectst,confirmedt,recoveredt,deathst,ideath,iconf,wconf,wdeath;
     private LinearLayout call,aware,travel,hospital,faq,share,massgather,about,notices,feedback,videos,extnotice,conf,fluclinic,quarantine;
-    private Button symptoms;
-    private TextView chd,india;
+    private Button coronaWeb,symptoms;
+    private TextView chd,chdhelp,india,indiahelp;
 
     private static final String TAG = "Homepage";
     private static final String FINE_LOC = "Manifest.permission.ACCESS_FINE_LOCATION";
@@ -78,7 +80,7 @@ public class Homepage extends AppCompatActivity implements OnMapReadyCallback {
 
 
 
-        coronaWeb = (TextView) findViewById(R.id.website);
+        coronaWeb = (Button) findViewById(R.id.website);
         suspectst = (TextView) findViewById(R.id.suspect_num);
         confirmedt = (TextView) findViewById(R.id.confirmed_num);
         recoveredt = (TextView) findViewById(R.id.recovered_num);
@@ -103,11 +105,22 @@ public class Homepage extends AppCompatActivity implements OnMapReadyCallback {
         conf = (LinearLayout) findViewById(R.id.confirmed);
         symptoms = (Button) findViewById(R.id.symptomscheck);
         fluclinic = (LinearLayout) findViewById(R.id.fluclinics);
-        quarantine = (LinearLayout) findViewById(R.id.quarantine);
+        quarantine = (LinearLayout) findViewById(R.id.quarentine);
+
 
 
         chd = (TextView) findViewById(R.id.chd);
         india = (TextView) findViewById(R.id.india);
+        chdhelp = (TextView) findViewById(R.id.chdhelp);
+        indiahelp = (TextView) findViewById(R.id.indiahelp);
+
+
+        chd.setShadowLayer(1, 0, 0, Color.BLACK);
+        chdhelp.setShadowLayer(1, 0, 0, Color.BLACK);
+        india.setShadowLayer(1, 0, 0, Color.BLACK);
+        indiahelp.setShadowLayer(1, 0, 0, Color.BLACK);
+
+
 
         chd.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -121,6 +134,22 @@ public class Homepage extends AppCompatActivity implements OnMapReadyCallback {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", "1075", null));
+                startActivity(intent);
+            }
+        });
+
+        chdhelp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", "9779558282", null));
+                startActivity(intent);
+            }
+        });
+
+        indiahelp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", "1123978046", null));
                 startActivity(intent);
             }
         });
@@ -242,7 +271,25 @@ public class Homepage extends AppCompatActivity implements OnMapReadyCallback {
                     }
                 });
 
+        final DatabaseReference mDatabase9;
+        mDatabase9 = FirebaseDatabase.getInstance().getReference("confirmedcasepdf");
+        mDatabase9.addListenerForSingleValueEvent(
+                new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        pdflink = dataSnapshot.getValue(String.class);
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+
+                    }
+                });
+
     }
+
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -357,8 +404,7 @@ public class Homepage extends AppCompatActivity implements OnMapReadyCallback {
         notices.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Homepage.this,websiteView.class);
-                intent.putExtra("url","http://chandigarh.gov.in/health_covid19.htm");
+                Intent intent = new Intent(Homepage.this,UTNotices.class);
                 startActivity(intent);
             }
         });
@@ -420,7 +466,9 @@ public class Homepage extends AppCompatActivity implements OnMapReadyCallback {
         conf.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(Homepage.this,"No Data Provided !",Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(Homepage.this,websiteView.class);
+                i.putExtra("url","https://docs.google.com/viewerng/viewer?url="+pdflink);
+                startActivity(i);
             }
         });
 

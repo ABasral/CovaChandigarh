@@ -5,56 +5,77 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="@drawable/grad2"
+    android:background="@color/white"
     >
-
-    <ImageView
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:src="@drawable/logo"
-        android:layout_marginTop="150dp"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/logo"
-        />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_below="@+id/logo"
-        android:background="@drawable/whiteborder"
-        android:layout_margin="20dp"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
         >
-
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/logo"
+            android:layout_gravity="center"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/logo"
+            />
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/logo"
-            android:layout_centerHorizontal="true"
-            android:text="COVID-19"
-            android:padding="10dp"
-            android:layout_gravity="center_horizontal"
+            android:id="@+id/name"
+            android:layout_margin="20dp"
             android:textStyle="bold"
+            android:textColor="@color/black"
+            android:text="Chandigarh Administration"
             android:textAlignment="center"
-            android:textSize="60dp"
-            android:textColor="@color/purple"
+            android:textSize="20dp"
             />
-        <TextView
-            android:layout_width="wrap_content"
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/logo"
-            android:layout_centerHorizontal="true"
-            android:text="Be Careful, not fearful"
-            android:padding="10dp"
-            android:layout_gravity="center_horizontal"
-            android:textStyle="italic"
-            android:textAlignment="center"
-            android:textSize="30dp"
-            android:textColor="@color/orange"
-            />
+            android:orientation="vertical"
+            android:layout_below="@+id/name"
+            android:layout_margin="20dp"
+            >
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/logo"
+                android:layout_centerHorizontal="true"
+                android:text="COVID-19"
+                android:padding="10dp"
+                android:layout_gravity="center_horizontal"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:textSize="60dp"
+                android:textColor="@color/purple"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/logo"
+                android:layout_centerHorizontal="true"
+                android:text="Be Careful and ensure Social Distancing "
+                android:padding="10dp"
+                android:layout_gravity="center_horizontal"
+                android:textStyle="italic|bold"
+                android:textAlignment="center"
+                android:textSize="30dp"
+                android:textColor="@color/colorPrimaryDark"
+
+                />
 
 
 
+        </LinearLayout>
     </LinearLayout>
 
 </RelativeLayout>
