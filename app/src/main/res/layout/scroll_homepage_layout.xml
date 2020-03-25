@@ -311,6 +311,17 @@
 
 
         </LinearLayout>
+        <com.uncopt.android.widget.text.justify.JustifiedTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryDark"
+            android:textColor="@color/white"
+            android:textStyle="italic|bold"
+            android:textAlignment="center"
+            android:textSize="20dp"
+            android:id="@+id/hindiwala"
+            android:text="कोरोना : कोई रोड़ पर ना निकले "
+            />
 
 
         <Button
@@ -560,7 +571,7 @@
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textStyle="bold"
-            android:text="Technical Education Department, UT Chandigarh"
+            android:text="Courtesy:\nTechnical Education Department, UT Chandigarh"
             />
     </LinearLayout>
 

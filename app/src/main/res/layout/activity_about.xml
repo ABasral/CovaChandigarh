@@ -110,7 +110,7 @@ For improving this mobile App and its services, do share your kind suggestions a
                 android:padding="10dp"
 
                 android:textStyle="bold|italic"
-                android:text="All the information and link contained in the App is provided for information purpose only. The information contained herein SHOULD NOT be used as medical advice, diagnosis or treatment.  If you any concerns or questions about your health, you should always consult with an registered physician or visit nearby hospitals."
+                android:text="All the information and link contained in the App is provided for information purpose only. The information contained herein SHOULD NOT be used as medical advice, diagnosis or treatment.  If you have any concerns or questions about your health, you should always consult with an registered physician or visit nearby hospitals."
                 />
 
         </LinearLayout>

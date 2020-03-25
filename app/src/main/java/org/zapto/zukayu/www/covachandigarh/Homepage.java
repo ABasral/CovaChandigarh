@@ -7,6 +7,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.location.Location;
 import android.net.Uri;
 import android.support.annotation.NonNull;
@@ -57,7 +58,7 @@ public class Homepage extends AppCompatActivity implements OnMapReadyCallback {
     DrawerLayout drawerLayout;
     ActionBarDrawerToggle toggle;
     NavigationView navigationView;
-    private TextView suspectst,confirmedt,recoveredt,deathst,ideath,iconf,wconf,wdeath;
+    private TextView suspectst,confirmedt,recoveredt,deathst,ideath,iconf,wconf,wdeath,hindimsg;
     private LinearLayout call,aware,travel,hospital,faq,share,massgather,about,notices,feedback,adm_msg,extnotice,conf,fluclinic,quarantine;
     private Button coronaWeb,symptoms;
     private TextView chd,chdhelp,india,indiahelp;
@@ -123,6 +124,7 @@ public class Homepage extends AppCompatActivity implements OnMapReadyCallback {
         fluclinic = (LinearLayout) findViewById(R.id.fluclinics);
         quarantine = (LinearLayout) findViewById(R.id.quarentine);
         adm_msg = (LinearLayout) findViewById(R.id.adm_desk);
+        hindimsg = (TextView) findViewById(R.id.hindiwala);
 
 
 
@@ -347,7 +349,7 @@ public class Homepage extends AppCompatActivity implements OnMapReadyCallback {
         call.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", "1075", null));
+                Intent intent = new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", "112", null));
                 startActivity(intent);
             }
         });

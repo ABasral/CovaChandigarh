@@ -87,6 +87,6 @@
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textStyle="bold"
-        android:text="Technical Education Department, UT Chandigarh"
+        android:text="Courtesy:\nTechnical Education Department, UT Chandigarh"
         />
 </RelativeLayout>

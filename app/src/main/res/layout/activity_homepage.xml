@@ -53,17 +53,7 @@
                     android:textAlignment="center"
                     />
 
-                <TextView
-                    android:textColor="@color/colorPrimaryDark"
-                    android:layout_width="match_parent"
-                    android:textSize="15dp"
-                    android:id="@+id/headerId"
-                    android:textAlignment="center"
-                    android:textStyle="bold"
-                    android:fontFamily="serif"
-                    android:layout_height="wrap_content"
-                    android:text="Technical Education Department, UT\nChandigarh Administration"
-                    />
+
 
                 <View
                     android:layout_width="match_parent"
@@ -557,7 +547,7 @@
                                 android:textSize="15dp"
                                 android:padding="10dp"
                                 android:layout_gravity="center"
-                                android:text="UT Administrator Message"
+                                android:text="Administration Messages"
                                 />
 
                         </LinearLayout>
