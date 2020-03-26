@@ -49,7 +49,7 @@
                         android:layout_height="wrap_content"
                         android:textAlignment="center"
                         android:textColor="@color/colorAccent"
-                        android:text="Suspects"
+                        android:text="Home Quarantined"
                         android:textStyle="bold"
                         />
                 </LinearLayout>
@@ -320,7 +320,7 @@
             android:textAlignment="center"
             android:textSize="20dp"
             android:id="@+id/hindiwala"
-            android:text="कोरोना : कोई रोड़ पर ना निकले "
+            android:text="@string/tagline"
             />
 
 
@@ -368,7 +368,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableLeft="@drawable/ic_adjust"
-                android:text="Treatement"
+                android:text="Treatment"
                 android:layout_weight="1"
                 android:textSize="15dp"
                 android:textColor="@color/black"

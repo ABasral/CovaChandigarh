@@ -106,6 +106,7 @@ public class Homepage extends AppCompatActivity implements OnMapReadyCallback {
         ideath = (TextView) findViewById(R.id.inddeath);
         wconf = (TextView) findViewById(R.id.worldconf);
         wdeath = (TextView) findViewById(R.id.worlddeath);
+
         call = (LinearLayout) findViewById(R.id.call);
         aware = (LinearLayout) findViewById(R.id.aware);
 //        prevprods = (LinearLayout)findViewById(R.id.prevprods);
@@ -140,42 +141,58 @@ public class Homepage extends AppCompatActivity implements OnMapReadyCallback {
         indiahelp.setShadowLayer(1, 0, 0, Color.BLACK);
 
 
-
-        chd.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", "112", null));
-                startActivity(intent);
-            }
-        });
-
-        india.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", "1075", null));
-                startActivity(intent);
-            }
-        });
-
-        chdhelp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", "9779558282", null));
-                startActivity(intent);
-            }
-        });
-
-        indiahelp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", "1123978046", null));
-                startActivity(intent);
-            }
-        });
-
         onclicklisteners();
-        getLocationPermissions();
+        refreshPage();
 
+
+
+    }
+
+
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.homepage_menu, menu);
+        return true;
+
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        if(toggle.onOptionsItemSelected(item)){
+            return true;
+        }
+
+        switch (item.getItemId()){
+            case R.id.alert:
+                startActivity(new Intent(Homepage.this,UTNotices.class));
+                Toast.makeText(Homepage.this,"Fetching Notices...",Toast.LENGTH_SHORT).show();
+                break;
+
+            case R.id.refresh:
+                Toast.makeText(Homepage.this,"Refreshing...",Toast.LENGTH_SHORT).show();
+                refreshPage();
+
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    private void refreshPage() {
+
+        suspectst.setText("-");
+        confirmedt.setText("-");
+        recoveredt.setText("-");
+        deathst.setText("-");
+        iconf.setText("-");
+        ideath.setText("-");
+        wconf.setText("-");
+        wdeath.setText("-");
+
+        getLocationPermissions();
         final DatabaseReference mDatabase;
         mDatabase = FirebaseDatabase.getInstance().getReference("suspects");
         mDatabase.addListenerForSingleValueEvent(
@@ -305,34 +322,7 @@ public class Homepage extends AppCompatActivity implements OnMapReadyCallback {
                     }
                 });
 
-    }
 
-
-
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater menuInflater = getMenuInflater();
-        menuInflater.inflate(R.menu.homepage_menu, menu);
-        return true;
-
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-
-        if(toggle.onOptionsItemSelected(item)){
-            return true;
-        }
-
-        switch (item.getItemId()){
-            case R.id.alert:
-                startActivity(new Intent(Homepage.this,UTNotices.class));
-                Toast.makeText(Homepage.this,"Fetching Notices...",Toast.LENGTH_SHORT).show();
-
-        }
-
-        return super.onOptionsItemSelected(item);
     }
 
     public void onclicklisteners() {
@@ -400,6 +390,40 @@ public class Homepage extends AppCompatActivity implements OnMapReadyCallback {
                 startActivity(i);
             }
         });
+
+        chd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", "112", null));
+                startActivity(intent);
+            }
+        });
+
+        india.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", "1075", null));
+                startActivity(intent);
+            }
+        });
+
+        chdhelp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", "9779558282", null));
+                startActivity(intent);
+            }
+        });
+
+        indiahelp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", "1123978046", null));
+                startActivity(intent);
+            }
+        });
+
+
 
 //        massgather.setOnClickListener(new View.OnClickListener() {
 //            @Override

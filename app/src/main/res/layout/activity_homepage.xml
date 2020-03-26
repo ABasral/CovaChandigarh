@@ -265,7 +265,7 @@
                                 android:textSize="15dp"
                                 android:padding="10dp"
                                 android:layout_gravity="center"
-                                android:text="Treatement Hospitals "
+                                android:text="Treatment Hospitals "
                                 />
 
                         </LinearLayout>
